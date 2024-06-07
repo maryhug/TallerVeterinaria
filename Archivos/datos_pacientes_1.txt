@@ -1,0 +1,25 @@
+Nombre Dueño: WQE
+Dirección: D
+Teléfono: DW
+Nombre Paciente: WDW
+Especie: W3D
+Raza: WDW
+Edad: DWD
+Sexo: WDW
+Color: DWD
+Vacunación: Sí
+-----------------------------------------
+
+Nombre Dueño: WQE
+Dirección: D
+Teléfono: DW
+Nombre Paciente: WDW
+Especie: W3D
+Raza: WDW
+Edad: DWD
+Sexo: WDW
+Color: DWD
+Vacunación: Sí
+Chequeo Clínico: 2024-06-06 21:21:56 - ADSASDADSSADSADDSA
+-----------------------------------------
+

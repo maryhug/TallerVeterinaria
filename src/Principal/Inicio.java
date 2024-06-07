@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import Panel.JDoctoresMenu;
 import Panel.JLogin;
+import Panel.JPacientesUI;
 
 public class Inicio extends JFrame {
 
@@ -50,7 +51,7 @@ public class Inicio extends JFrame {
 	public void mostrarJIngresoDoc() {
 		Container contentPane = getContentPane();
 		contentPane.removeAll();
-		JDoctoresMenu ingresoDocPanel = new JDoctoresMenu("Nombre de Usuario");
+		JDoctoresMenu ingresoDocPanel = new JDoctoresMenu(getName());
 		contentPane.add(ingresoDocPanel, BorderLayout.CENTER);
 		contentPane.revalidate();
 		contentPane.repaint();
