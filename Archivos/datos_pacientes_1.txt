@@ -1,25 +1,126 @@
-Nombre Dueño: WQE
-Dirección: D
-Teléfono: DW
-Nombre Paciente: WDW
-Especie: W3D
-Raza: WDW
-Edad: DWD
-Sexo: WDW
-Color: DWD
+Nombre Dueño: w
+Dirección: 
+Teléfono: 
+Correo Electrónico: 
+Nombre Paciente: 
+Especie: 
+Raza: 
+Edad: 
+Sexo: 
+Color: 
 Vacunación: Sí
+Vacunación (Lista de vacunas con fechas): 
+Desparasitaciones (Fechas y productos usados): 
+Enfermedades Previas: 
+Cirugías Anteriores: 
+Alergias (alimentos, medicamentos, etc.): 
+Medicamentos Actuales: 
 -----------------------------------------
 
-Nombre Dueño: WQE
-Dirección: D
-Teléfono: DW
-Nombre Paciente: WDW
-Especie: W3D
-Raza: WDW
-Edad: DWD
-Sexo: WDW
-Color: DWD
+Nombre Dueño: 
+Dirección: 
+Teléfono: 
+Correo Electrónico: 
+Nombre Paciente: 
+Especie: 
+Raza: 
+Edad: 
+Sexo: 
+Color: 
 Vacunación: Sí
-Chequeo Clínico: 2024-06-06 21:21:56 - ADSASDADSSADSADDSA
+Vacunación (Lista de vacunas con fechas): 
+Desparasitaciones (Fechas y productos usados): 
+Enfermedades Previas: 
+Cirugías Anteriores: 
+Alergias (alimentos, medicamentos, etc.): 
+Medicamentos Actuales: 
+-----------------------------------------
+
+Nombre Dueño: ww
+Dirección: 
+Teléfono: 
+Correo Electrónico: 
+Nombre Paciente: 
+Especie: 
+Raza: 
+Edad: 
+Sexo: 
+Color: 
+Vacunación: Sí
+Vacunación (Lista de vacunas con fechas): 
+Desparasitaciones (Fechas y productos usados): 
+Enfermedades Previas: 
+Cirugías Anteriores: 
+Alergias (alimentos, medicamentos, etc.): 
+Medicamentos Actuales: 
+-----------------------------------------
+
+Nombre Dueño: w
+Dirección: 
+Teléfono: 
+Correo Electrónico: 
+Nombre Paciente: 
+Especie: 
+Raza: 
+Edad: 
+Sexo: 
+Color: 
+Último Chequeo: 08/06/2024 00:07:07
+ssssssssssssssssss
+Nombre Dueño: 
+Dirección: 
+Teléfono: 
+Correo Electrónico: 
+Nombre Paciente: 
+Especie: 
+Raza: 
+Edad: 
+Sexo: 
+Color: 
+Vacunación: Sí
+Vacunación (Lista de vacunas con fechas): 
+Desparasitaciones (Fechas y productos usados): 
+Enfermedades Previas: 
+Cirugías Anteriores: 
+Alergias (alimentos, medicamentos, etc.): 
+Medicamentos Actuales: 
+-----------------------------------------
+
+Nombre Dueño: 
+Dirección: 
+Teléfono: 
+Correo Electrónico: 
+Nombre Paciente: 
+Especie: 
+Raza: 
+Edad: 
+Sexo: 
+Color: 
+Vacunación: Sí
+Vacunación (Lista de vacunas con fechas): 
+Desparasitaciones (Fechas y productos usados): 
+Enfermedades Previas: 
+Cirugías Anteriores: 
+Alergias (alimentos, medicamentos, etc.): 
+Medicamentos Actuales: 
+-----------------------------------------
+
+Nombre Dueño: 
+Dirección: 
+Teléfono: 
+Correo Electrónico: 
+Nombre Paciente: 
+Especie: 
+Raza: 
+Edad: 
+Sexo: 
+Color: 
+Vacunación: Sí
+Vacunación (Lista de vacunas con fechas): 
+Desparasitaciones (Fechas y productos usados): 
+Enfermedades Previas: 
+Cirugías Anteriores: 
+Alergias (alimentos, medicamentos, etc.): 
+Medicamentos Actuales: 
 -----------------------------------------
 

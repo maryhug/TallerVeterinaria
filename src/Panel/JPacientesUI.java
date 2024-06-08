@@ -1,14 +1,11 @@
 package Panel;
 
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -17,16 +14,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+import Logica.PacienteManager;
 import Principal.Inicio;
 
 public class JPacientesUI extends JPanel {
-	public JPacientesUI() {
-	}
 
 	private static final long serialVersionUID = 1L;
+
 	private JTextField textFieldNombreDueño;
 	private JTextField textFieldDireccion;
 	private JTextField textFieldTelefono;
@@ -37,244 +33,144 @@ public class JPacientesUI extends JPanel {
 	private JTextField textFieldSexo;
 	private JTextField textFieldColor;
 	private JComboBox<String> comboBoxVacunacion;
-	private JPanel panelContenido;
-	private JPanel panelForm;
-	private CardLayout cardLayout;
+	private JTextArea textAreaCorreoElectronico;
+	private JTextArea textAreaVacunacion;
+	private JTextArea textAreaDesparasitaciones;
+	private JTextArea textAreaEnfermedadesPrevias;
+	private JTextArea textAreaCirugiasAnteriores;
+	private JTextArea textAreaAlergias;
+	private JTextArea textAreaMedicamentosActuales;
 	private Logica.PacienteManager pacienteManager;
 
-//	public JPacientesUI(String doctorID, JPanel panelContenido, JPanel panelForm, CardLayout cardLayout) {
-//		this.pacienteManager = new Logica.PacienteManager(doctorID);
-//		this.panelContenido = panelContenido;
-//		this.panelForm = panelForm;
-//		this.cardLayout = cardLayout;
-//
-//		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-//
-//		JLabel lblNewLabel = new JLabel("Sistema de Gestión de Pacientes");
-//		lblNewLabel.setAlignmentX(CENTER_ALIGNMENT);
-//		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-//		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-//		add(lblNewLabel);
-//
-//		JPanel panelBotones = new JPanel();
-//		add(panelBotones);
-//
-//		JButton btnRegistrarPaciente = new JButton("Registrar Paciente");
-//		btnRegistrarPaciente.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				registrarPaciente();
-//			}
-//		});
-//		panelBotones.add(btnRegistrarPaciente);
-//
-//		JButton btnBuscarPaciente = new JButton("Buscar Paciente");
-//		btnBuscarPaciente.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				buscarPaciente();
-//			}
-//		});
-//		panelBotones.add(btnBuscarPaciente);
-//
-//		JButton btnModificarPaciente = new JButton("Modificar Paciente");
-//		btnModificarPaciente.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				modificarPaciente();
-//			}
-//		});
-//		panelBotones.add(btnModificarPaciente);
-//
-//		JButton btnEliminarPaciente = new JButton("Eliminar Paciente");
-//		btnEliminarPaciente.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				eliminarPaciente();
-//			}
-//		});
-//		panelBotones.add(btnEliminarPaciente);
-//
-//		JButton btnVerHistoriales = new JButton("Ver Historiales");
-//		btnVerHistoriales.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				verHistoriales();
-//			}
-//		});
-//		panelBotones.add(btnVerHistoriales);
-//		
-//				JButton btnAgregarChequeo = new JButton("Agregar Chequeo Clínico");
-//				btnAgregarChequeo.addActionListener(new ActionListener() {
-//					public void actionPerformed(ActionEvent e) {
-//						agregarChequeo();
-//					}
-//				});
-//				panelBotones.add(btnAgregarChequeo);
-//				
-//						JButton btnAtras = new JButton("Atrás");
-//						btnAtras.addActionListener(new ActionListener() {
-//							public void actionPerformed(ActionEvent e) {
-//								cardLayout.show(panelContenido, "menuPrincipal");
-//							}
-//						});
-//						panelBotones.add(btnAtras);
-//	}
+	PacienteManager huh = new PacienteManager(getName());
 
-//	public JPacientesUI(String doctorID, JPanel panelContenido, JPanel panelForm, CardLayout cardLayout) {
-//	    this.pacienteManager = new Logica.PacienteManager(doctorID);
-//	    this.panelContenido = panelContenido;
-//	    this.panelForm = panelForm;
-//	    this.cardLayout = cardLayout;
-//
-//	    setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-//
-//	    JLabel lblNewLabel = new JLabel("Sistema de Gestión de Pacientes");
-//	    lblNewLabel.setAlignmentX(CENTER_ALIGNMENT);
-//	    lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-//	    lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-//	    add(lblNewLabel);
-//
-//	    JPanel panelBotones = new JPanel(new GridLayout(0, 1)); // GridLayout con una columna variable
-//	    add(panelBotones);
-//
-//	    JButton btnRegistrarPaciente = new JButton("Registrar Paciente");
-//	    btnRegistrarPaciente.addActionListener(new ActionListener() {
-//	        public void actionPerformed(ActionEvent e) {
-//	            registrarPaciente();
-//	        }
-//	    });
-//	    panelBotones.add(btnRegistrarPaciente);
-//
-//	    JButton btnBuscarPaciente = new JButton("Buscar Paciente");
-//	    btnBuscarPaciente.addActionListener(new ActionListener() {
-//	        public void actionPerformed(ActionEvent e) {
-//	            buscarPaciente();
-//	        }
-//	    });
-//	    panelBotones.add(btnBuscarPaciente);
-//
-//	    JButton btnModificarPaciente = new JButton("Modificar Paciente");
-//	    btnModificarPaciente.addActionListener(new ActionListener() {
-//	        public void actionPerformed(ActionEvent e) {
-//	            modificarPaciente();
-//	        }
-//	    });
-//	    panelBotones.add(btnModificarPaciente);
-//
-//	    JButton btnEliminarPaciente = new JButton("Eliminar Paciente");
-//	    btnEliminarPaciente.addActionListener(new ActionListener() {
-//	        public void actionPerformed(ActionEvent e) {
-//	            eliminarPaciente();
-//	        }
-//	    });
-//	    panelBotones.add(btnEliminarPaciente);
-//
-//	    JButton btnVerHistoriales = new JButton("Ver Historiales");
-//	    btnVerHistoriales.addActionListener(new ActionListener() {
-//	        public void actionPerformed(ActionEvent e) {
-//	            verHistoriales();
-//	        }
-//	    });
-//	    panelBotones.add(btnVerHistoriales);
-//
-//	    JButton btnAgregarChequeo = new JButton("Agregar Chequeo Clínico");
-//	    btnAgregarChequeo.addActionListener(new ActionListener() {
-//	        public void actionPerformed(ActionEvent e) {
-//	            agregarChequeo();
-//	        }
-//	    });
-//	    panelBotones.add(btnAgregarChequeo);
-//
-//	    JButton btnAtras = new JButton("Atrás");
-//	    btnAtras.addActionListener(new ActionListener() {
-//	        public void actionPerformed(ActionEvent e) {
-//	            cardLayout.show(panelContenido, "menuPrincipal");
-//	        }
-//	    });
-//	    panelBotones.add(btnAtras);
-//	}
-//	
-
-	public JPacientesUI(String doctorID, JPanel panelContenido, JPanel panelForm, CardLayout cardLayout) {
+	public JPacientesUI(String doctorID) {
 		this.pacienteManager = new Logica.PacienteManager(doctorID);
-		this.panelContenido = panelContenido;
-		this.panelForm = panelForm;
-		this.cardLayout = cardLayout;
 
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout(0, 0));
 
-		JLabel lblNewLabel = new JLabel("Sistema de Gestión de Pacientes");
-		lblNewLabel.setAlignmentX(CENTER_ALIGNMENT);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		add(lblNewLabel, BorderLayout.NORTH);
+		JPanel Derecha = new JPanel();
+		add(Derecha, BorderLayout.EAST);
+		Derecha.setLayout(new GridLayout(0, 1, 0, 0));
 
-		JPanel panelBotones = new JPanel(new GridLayout(0, 1)); // GridLayout con una columna variable
-		panelBotones.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Agrega relleno alrededor del panel
-																					// de botones
-		add(panelBotones, BorderLayout.CENTER); // Agrega el panel de botones al centro del BorderLayout
+		JLabel lblEspacio_1 = new JLabel("");
+		Derecha.add(lblEspacio_1);
 
-		JButton btnRegistrarPaciente = new JButton("Registrar Paciente");
-		btnRegistrarPaciente.addActionListener(new ActionListener() {
+		JLabel lblEspacio_2 = new JLabel("");
+		Derecha.add(lblEspacio_2);
+
+		JLabel lblEspacio_3 = new JLabel("");
+		Derecha.add(lblEspacio_3);
+
+		JButton btnMenuPrincipal = new JButton("Menu Principal");
+		Derecha.add(btnMenuPrincipal);
+
+		btnMenuPrincipal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registrarPaciente();
+				Inicio frame = (Inicio) SwingUtilities.getWindowAncestor(JPacientesUI.this);
+				if (frame != null) {
+					frame.mostrarJIngresoDoc();
+				}
 			}
 		});
-		panelBotones.add(btnRegistrarPaciente);
 
-		JButton btnBuscarPaciente = new JButton("Buscar Paciente");
-		btnBuscarPaciente.addActionListener(new ActionListener() {
+		JButton btnCerrarSesion = new JButton("Cerrar Sesión");
+		Derecha.add(btnCerrarSesion);
+
+		btnCerrarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buscarPaciente();
+				Inicio frame = (Inicio) SwingUtilities.getWindowAncestor(JPacientesUI.this);
+				if (frame != null) {
+					frame.mostrarPanelInicioSesion();
+				}
 			}
 		});
-		panelBotones.add(btnBuscarPaciente);
 
-		JButton btnModificarPaciente = new JButton("Modificar Paciente");
-		btnModificarPaciente.addActionListener(new ActionListener() {
+		JPanel Superior = new JPanel();
+		add(Superior, BorderLayout.NORTH);
+
+		JLabel TituloPrincipal = new JLabel("Pacientes");
+		TituloPrincipal.setFont(new Font("Segoe Print", Font.PLAIN, 15));
+		Superior.add(TituloPrincipal);
+
+		JPanel Izquierda = new JPanel();
+		add(Izquierda, BorderLayout.WEST);
+
+		JPanel Inferior = new JPanel();
+		add(Inferior, BorderLayout.SOUTH);
+
+		JPanel Centro = new JPanel();
+		add(Centro, BorderLayout.CENTER);
+
+		Centro.setLayout(new GridLayout(0, 1, 0, 0)); // Cambio a GridLayout
+
+		JButton btnNewButton_2 = new JButton("Modifcar");
+		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				modificarPaciente();
 			}
 		});
-		panelBotones.add(btnModificarPaciente);
 
-		JButton btnEliminarPaciente = new JButton("Eliminar Paciente");
-		btnEliminarPaciente.addActionListener(new ActionListener() {
+		JButton btnNewButton_1 = new JButton("Eliminar");
+		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				eliminarPaciente();
 			}
 		});
-		panelBotones.add(btnEliminarPaciente);
 
-		JButton btnVerHistoriales = new JButton("Ver Historiales");
-		btnVerHistoriales.addActionListener(new ActionListener() {
+		JButton btnNewButton = new JButton("Ingresar");
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				verHistoriales();
+				registrarPaciente();
+				llenarFormulario(doctorID);
 			}
 		});
-		panelBotones.add(btnVerHistoriales);
 
-		JButton btnAgregarChequeo = new JButton("Agregar Chequeo Clínico");
-		btnAgregarChequeo.addActionListener(new ActionListener() {
+		JButton btnNewButton_5 = new JButton("Agg chequeo");
+		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				agregarChequeo();
 			}
 		});
-		panelBotones.add(btnAgregarChequeo);
 
-		JButton btnAtras = new JButton("Atrás");
-		btnAtras.addActionListener(new ActionListener() {
+		JButton btnNewButton_3 = new JButton("Listar");
+		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Inicio frame = (Inicio) SwingUtilities.getWindowAncestor(JPacientesUI.this);
-				frame.mostrarJIngresoDoc();
+				verHistoriales();
 			}
 		});
-		panelBotones.add(btnAtras);
+
+		JButton btnNewButton_4 = new JButton("Buscar");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				buscarPaciente();
+			}
+		});
+
+		Centro.add(btnNewButton);
+		Centro.add(btnNewButton_1);
+		Centro.add(btnNewButton_2);
+		Centro.add(btnNewButton_3);
+		Centro.add(btnNewButton_4);
+		Centro.add(btnNewButton_5);
 	}
 
 	private void registrarPaciente() {
 		limpiarFormulario();
+
 		int result = JOptionPane.showConfirmDialog(null, getFormularioPanel(), "Registrar Paciente",
 				JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 		if (result == JOptionPane.OK_OPTION) {
-			String nuevoRegistro = obtenerDatosFormulario();
-			pacienteManager.guardarDatos(nuevoRegistro);
+			if (textFieldNombreDueño.getText().isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Debe ingresar el nombre del dueño.", "Error",
+						JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showConfirmDialog(null, getFormularioPanel(), "Registrar Paciente",
+						JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+			} else {
+				String nuevoRegistro = obtenerDatosFormulario();
+				pacienteManager.guardarDatos(nuevoRegistro);
+				llenarFormulario(nuevoRegistro);
+			}
 		}
 	}
 
@@ -293,7 +189,6 @@ public class JPacientesUI extends JPanel {
 		if (nombreDueño != null) {
 			String datosPaciente = pacienteManager.modificarPaciente(nombreDueño);
 			if (datosPaciente != null) {
-				llenarFormulario(datosPaciente);
 				int result = JOptionPane.showConfirmDialog(null, getFormularioPanel(), "Modificar Paciente",
 						JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 				if (result == JOptionPane.OK_OPTION) {
@@ -343,7 +238,7 @@ public class JPacientesUI extends JPanel {
 
 	private JPanel getFormularioPanel() {
 		JPanel formularioPanel = new JPanel();
-		formularioPanel.setLayout(new GridLayout(10, 2));
+		formularioPanel.setLayout(new GridLayout(0, 2, 5, 5));
 
 		formularioPanel.add(new JLabel("Nombre Dueño:"));
 		textFieldNombreDueño = new JTextField();
@@ -356,6 +251,10 @@ public class JPacientesUI extends JPanel {
 		formularioPanel.add(new JLabel("Teléfono:"));
 		textFieldTelefono = new JTextField();
 		formularioPanel.add(textFieldTelefono);
+
+		formularioPanel.add(new JLabel("Correo Electrónico:"));
+		textAreaCorreoElectronico = new JTextArea();
+		formularioPanel.add(new JScrollPane(textAreaCorreoElectronico));
 
 		formularioPanel.add(new JLabel("Nombre Paciente:"));
 		textFieldNombrePaciente = new JTextField();
@@ -385,6 +284,30 @@ public class JPacientesUI extends JPanel {
 		comboBoxVacunacion = new JComboBox<>(new String[] { "Sí", "No" });
 		formularioPanel.add(comboBoxVacunacion);
 
+		formularioPanel.add(new JLabel("Vacunación (Lista de vacunas con fechas):"));
+		textAreaVacunacion = new JTextArea();
+		formularioPanel.add(new JScrollPane(textAreaVacunacion));
+
+		formularioPanel.add(new JLabel("Desparasitaciones (Fechas y productos usados):"));
+		textAreaDesparasitaciones = new JTextArea();
+		formularioPanel.add(new JScrollPane(textAreaDesparasitaciones));
+
+		formularioPanel.add(new JLabel("Enfermedades Previas:"));
+		textAreaEnfermedadesPrevias = new JTextArea();
+		formularioPanel.add(new JScrollPane(textAreaEnfermedadesPrevias));
+
+		formularioPanel.add(new JLabel("Cirugías Anteriores:"));
+		textAreaCirugiasAnteriores = new JTextArea();
+		formularioPanel.add(new JScrollPane(textAreaCirugiasAnteriores));
+
+		formularioPanel.add(new JLabel("Alergias (alimentos, medicamentos, etc.):"));
+		textAreaAlergias = new JTextArea();
+		formularioPanel.add(new JScrollPane(textAreaAlergias));
+
+		formularioPanel.add(new JLabel("Medicamentos Actuales:"));
+		textAreaMedicamentosActuales = new JTextArea();
+		formularioPanel.add(new JScrollPane(textAreaMedicamentosActuales));
+
 		return formularioPanel;
 	}
 
@@ -393,6 +316,7 @@ public class JPacientesUI extends JPanel {
 			textFieldNombreDueño.setText("");
 			textFieldDireccion.setText("");
 			textFieldTelefono.setText("");
+			textAreaCorreoElectronico.setText("");
 			textFieldNombrePaciente.setText("");
 			textFieldEspecie.setText("");
 			textFieldRaza.setText("");
@@ -400,6 +324,12 @@ public class JPacientesUI extends JPanel {
 			textFieldSexo.setText("");
 			textFieldColor.setText("");
 			comboBoxVacunacion.setSelectedIndex(0);
+			textAreaVacunacion.setText("");
+			textAreaDesparasitaciones.setText("");
+			textAreaEnfermedadesPrevias.setText("");
+			textAreaCirugiasAnteriores.setText("");
+			textAreaAlergias.setText("");
+			textAreaMedicamentosActuales.setText("");
 		}
 	}
 
@@ -408,6 +338,7 @@ public class JPacientesUI extends JPanel {
 		datos.append("Nombre Dueño: ").append(textFieldNombreDueño.getText()).append("\n");
 		datos.append("Dirección: ").append(textFieldDireccion.getText()).append("\n");
 		datos.append("Teléfono: ").append(textFieldTelefono.getText()).append("\n");
+		datos.append("Correo Electrónico: ").append(textAreaCorreoElectronico.getText()).append("\n");
 		datos.append("Nombre Paciente: ").append(textFieldNombrePaciente.getText()).append("\n");
 		datos.append("Especie: ").append(textFieldEspecie.getText()).append("\n");
 		datos.append("Raza: ").append(textFieldRaza.getText()).append("\n");
@@ -415,22 +346,75 @@ public class JPacientesUI extends JPanel {
 		datos.append("Sexo: ").append(textFieldSexo.getText()).append("\n");
 		datos.append("Color: ").append(textFieldColor.getText()).append("\n");
 		datos.append("Vacunación: ").append(comboBoxVacunacion.getSelectedItem().toString()).append("\n");
+		datos.append("Vacunación (Lista de vacunas con fechas): ").append(textAreaVacunacion.getText()).append("\n");
+		datos.append("Desparasitaciones (Fechas y productos usados): ").append(textAreaDesparasitaciones.getText())
+				.append("\n");
+		datos.append("Enfermedades Previas: ").append(textAreaEnfermedadesPrevias.getText()).append("\n");
+		datos.append("Cirugías Anteriores: ").append(textAreaCirugiasAnteriores.getText()).append("\n");
+		datos.append("Alergias (alimentos, medicamentos, etc.): ").append(textAreaAlergias.getText()).append("\n");
+		datos.append("Medicamentos Actuales: ").append(textAreaMedicamentosActuales.getText()).append("\n");
 		datos.append("-----------------------------------------\n\n");
 		return datos.toString();
 	}
 
 	private void llenarFormulario(String datosPaciente) {
 		String[] datos = datosPaciente.split("\n");
-		textFieldNombreDueño.setText(datos[0].substring(14));
-		textFieldDireccion.setText(datos[1].substring(11));
-		textFieldTelefono.setText(datos[2].substring(10));
-		textFieldNombrePaciente.setText(datos[3].substring(17));
-		textFieldEspecie.setText(datos[4].substring(8));
-		textFieldRaza.setText(datos[5].substring(6));
-		textFieldEdad.setText(datos[6].substring(6));
-		textFieldSexo.setText(datos[7].substring(6));
-		textFieldColor.setText(datos[8].substring(7));
-		comboBoxVacunacion.setSelectedItem(datos[9].substring(12));
+		if (datos.length >= 17) {
+			if (textFieldNombreDueño != null) {
+				textFieldNombreDueño.setText(datos[0].substring(14));
+			}
+			if (textFieldDireccion != null) {
+				textFieldDireccion.setText(datos[1].substring(11));
+			}
+			if (textFieldTelefono != null) {
+				textFieldTelefono.setText(datos[2].substring(10));
+			}
+			if (textAreaCorreoElectronico != null) {
+				textAreaCorreoElectronico.setText(datos[3].substring(20));
+			}
+			if (textFieldNombrePaciente != null) {
+				textFieldNombrePaciente.setText(datos[4].substring(17));
+			}
+			if (textFieldEspecie != null) {
+				textFieldEspecie.setText(datos[5].substring(8));
+			}
+			if (textFieldRaza != null) {
+				textFieldRaza.setText(datos[6].substring(6));
+			}
+			if (textFieldEdad != null) {
+				textFieldEdad.setText(datos[7].substring(6));
+			}
+			if (textFieldSexo != null) {
+				textFieldSexo.setText(datos[8].substring(6));
+			}
+			if (textFieldColor != null) {
+				textFieldColor.setText(datos[9].substring(7));
+			}
+			if (comboBoxVacunacion != null) {
+				comboBoxVacunacion.setSelectedItem(datos[10].substring(12));
+			}
+			if (textAreaVacunacion != null) {
+				textAreaVacunacion.setText(datos[11].substring(37));
+			}
+			if (textAreaDesparasitaciones != null) {
+				textAreaDesparasitaciones.setText(datos[12].substring(43));
+			}
+			if (textAreaEnfermedadesPrevias != null) {
+				textAreaEnfermedadesPrevias.setText(datos[13].substring(21));
+			}
+			if (textAreaCirugiasAnteriores != null) {
+				textAreaCirugiasAnteriores.setText(datos[14].substring(20));
+			}
+			if (textAreaAlergias != null) {
+				textAreaAlergias.setText(datos[15].substring(31));
+			}
+			if (textAreaMedicamentosActuales != null) {
+				textAreaMedicamentosActuales.setText(datos[16].substring(22));
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Los datos del paciente son incompletos.", "Error",
+					JOptionPane.ERROR_MESSAGE);
+		}
 	}
 
 	private void mostrarResultados(String resultados, String titulo) {
@@ -441,4 +425,5 @@ public class JPacientesUI extends JPanel {
 
 		JOptionPane.showMessageDialog(null, scrollPane, titulo, JOptionPane.PLAIN_MESSAGE);
 	}
+
 }

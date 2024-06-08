@@ -30,7 +30,7 @@ public class JDoctoresMenu extends JPanel {
 		btnPacientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				JPacientesUI ingresarPacientesPanel = new JPacientesUI(nombreUsuario, null, null, null);
+				JPacientesUI ingresarPacientesPanel = new JPacientesUI(nombreUsuario);
 				JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(JDoctoresMenu.this);
 				frame.setContentPane(ingresarPacientesPanel);
 				frame.setVisible(true);
