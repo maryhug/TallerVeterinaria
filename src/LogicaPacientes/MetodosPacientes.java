@@ -37,22 +37,6 @@ public class MetodosPacientes {
 		this.pacienteManager = new Pacientes(doctorID);
 	}
 
-//    public void registrarPaciente() {
-//        limpiarFormulario();
-//        int result = JOptionPane.showConfirmDialog(null, getFormularioPanel(), "Registrar Paciente",
-//                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-//        if (result == JOptionPane.OK_OPTION) {
-//            if (textFieldNombreDueño.getText().isEmpty()) {
-//                JOptionPane.showMessageDialog(null, "Debe ingresar el nombre del dueño.", "Error",
-//                        JOptionPane.ERROR_MESSAGE);
-//            } else {
-//                String nuevoRegistro = obtenerDatosFormulario();
-//                pacienteManager.guardarDatos(nuevoRegistro);
-//                llenarFormulario(nuevoRegistro);
-//            }
-//        }
-//    }
-
 	public void registrarPaciente() {
 		if (textFieldNombreDueño == null) {
 			getFormularioPanel();

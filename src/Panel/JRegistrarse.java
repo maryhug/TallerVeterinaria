@@ -251,18 +251,16 @@ public class JRegistrarse extends JPanel {
                 String usuarioIngresado = textField.getText();
                 String contrasena = textField_1.getText();
                 String confirmacionContrasena = textField_2.getText();
-
                 if (!usuarioIngresado.isEmpty() && !contrasena.isEmpty() && !confirmacionContrasena.isEmpty()) {
                     if (contrasena.equals(confirmacionContrasena)) {
                         usuario = usuarioIngresado;
                         contraseña = contrasena;
                         try {
-                            File file = new File("Archivos/usuarios.txt");
+                            File file = new File("Archivos\\usuarios.txt");
                             if (!file.exists()) {
-                                file.getParentFile().mkdirs(); // Asegura que los directorios existan
-                                file.createNewFile(); // Crea el archivo si no existe
+                                file.getParentFile().mkdirs();
+                                file.createNewFile();
                             }
-
                             PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
                             writer.println(usuario + "," + contraseña);
                             writer.close();
@@ -275,7 +273,6 @@ public class JRegistrarse extends JPanel {
                             messageError.setForeground(Color.RED);
                             ex.printStackTrace();
                         }
-
                     } else {
                         messageError.setText("Las contraseñas no coinciden.");
                         messageError.setFont(new Font("Segoe Print", Font.PLAIN, 15));

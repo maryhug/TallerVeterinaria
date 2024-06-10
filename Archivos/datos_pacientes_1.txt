@@ -1,0 +1,22 @@
+Nombre Dueño: ewf
+Dirección: few
+Teléfono: fewfewfewf
+Correo Electrónico: ew
+Nombre Paciente: few
+Especie: fewfewf
+Raza: ewfwef
+Edad: fw
+Sexo: efwe
+Color: fwe
+Vacunación: Sí
+Vacunación (Lista de vacunas con fechas): few
+Desparasitaciones (Fechas y productos usados): few
+Enfermedades Previas: ewfewf
+Cirugías Anteriores: ef
+Alergias (alimentos, medicamentos, etc.): wef
+Medicamentos Actuales: ewf
+-----------------------------------------
+
+
+Último Chequeo de ewf :09/06/2024 21:41:23
+1478523698741021589632

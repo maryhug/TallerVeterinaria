@@ -1,0 +1,15 @@
+Nombre Completo: 1
+Número de Licencia Médica: 1
+Especialidad: 1
+Número de Teléfono: 1
+Correo Electrónico: 1
+Dirección de Consultorio: 1
+Años de Experiencia: 1
+Educación: 1
+Universidad/Institución: 1
+Título Obtenido: 1
+Año de Graduación: 1
+Certificaciones: 1
+Idiomas Hablados: 1
+Horario de Atención: 1
+
